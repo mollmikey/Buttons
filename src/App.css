@@ -110,7 +110,7 @@ button {
 
  /* ------------------------------------------------------------------------------------------------- */
  
-.send {
+ .send {
   font-family: inherit;
   font-size: 18px;
   background: linear-gradient(45deg, royalblue, dodgerblue);
@@ -125,6 +125,7 @@ button {
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
 }
 
 .send span {
@@ -145,29 +146,47 @@ button {
   transform: translateY(-2px);
 }
 
+.send:active {
+  transform: scale(0.95); /* Slightly shrink the button to mimic a press */
+}
+
 .send:hover .svg-wrapper {
-  animation: fly-1 0.6s ease-in-out infinite alternate;
+  animation: fly-1 0.6s ease-in-out infinite alternate; /* Subtle bouncing */
 }
 
 .send:hover svg {
-  transform: translateX(1.5em) rotate(45deg) scale(1.2);
+  transform: translateX(1.5em) rotate(45deg) scale(1.2); /* Bouncing position */
 }
 
 .send:hover span {
   transform: translateX(6em);
 }
 
-.send:active {
-  transform: scale(0.95);
+.send:active svg {
+  animation: send-animation-from-hover 0.7s ease-in-out forwards; /* Fly-off starts from hover position */
 }
 
+/* Existing subtle bounce animation */
 @keyframes fly-1 {
   from {
     transform: translateY(0.15em);
   }
-
   to {
     transform: translateY(-0.15em);
+  }
+}
+
+/* New fly-off animation starting from hover */
+@keyframes send-animation-from-hover {
+  0% {
+    transform: translateX(1.5em) rotate(45deg) scale(1.2); /* Start from hover position */
+  }
+  50% {
+    transform: translateX(100vw) rotate(45deg) scale(1.2); /* Fly off the screen */
+  }
+  100% {
+    transform: translateX(100vw) rotate(45deg) scale(0.8); /* Shrink and fade */
+    opacity: 0;
   }
 }
 
