@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Glow from './buttons/Glow';
 import Send from './buttons/Send'
+import Stars from './buttons/Stars';
 
 function App() {
 const [isDarkMode, setIsDarkMode] = useState(false); // State to track the mode
@@ -17,6 +18,7 @@ const [isDarkMode, setIsDarkMode] = useState(false); // State to track the mode
                 </button>
                 <Glow />
                 <Send />
+                <Stars />
             </div>
     </>
   );
