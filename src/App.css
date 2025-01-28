@@ -37,77 +37,80 @@
 }
 /* ------------------------------------------------------------------------------------------------- */
 .glow {
-  --glow-color: rgb(217, 176, 255);
-  --glow-spread-color: rgba(191, 123, 255, 0.781);
-  --enhanced-glow-color: rgb(231, 206, 255);
-  --btn-color: rgb(100, 61, 136);
-  border: .25em solid var(--glow-color);
+  --glow-color: rgb(180, 150, 255); /* Softer glow color */
+  --glow-spread-color: rgba(170, 110, 250, 0.75);
+  --enhanced-glow-color: rgb(220, 200, 255);
+  --btn-color: rgb(80, 50, 120); /* Slightly darker button color */
+  border: 0.3em solid var(--glow-color);
   padding: 1em 3em;
   color: var(--glow-color);
-  font-size: 15px;
+  font-size: 16px; /* Slightly larger font size */
   font-weight: bold;
   background-color: var(--btn-color);
-  border-radius: 1em;
+  border-radius: 0.8em; /* Slightly reduced rounding */
   outline: none;
-  box-shadow: 0 0 1em .25em var(--glow-color),
-         0 0 4em 1em var(--glow-spread-color),
-         inset 0 0 .75em .25em var(--glow-color);
-  text-shadow: 0 0 .5em var(--glow-color);
+  box-shadow: 0 0 1.2em 0.3em var(--glow-color),
+              0 0 4em 1.5em var(--glow-spread-color),
+              inset 0 0 0.8em 0.3em var(--glow-color);
+  text-shadow: 0 0 0.6em var(--glow-color);
   position: relative;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out; /* Smoother transitions */
   cursor: pointer;
- }
- 
- .glow::after {
+}
+
+.glow::after {
   pointer-events: none;
   content: "";
   position: absolute;
-  top: 120%;
+  top: 115%; /* Slightly closer glow */
   left: 0;
   height: 100%;
   width: 100%;
   background-color: var(--glow-spread-color);
   filter: blur(2em);
-  opacity: .7;
-  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
- }
- 
- .glow:hover {
+  opacity: 0.8; /* Increased opacity for a stronger effect */
+  transform: perspective(1.5em) rotateX(30deg) scale(1, 0.7);
+}
+
+.glow:hover {
   color: var(--btn-color);
   background-color: var(--glow-color);
-  box-shadow: 0 0 1em .25em var(--glow-color),
-         0 0 4em 2em var(--glow-spread-color),
-         inset 0 0 .75em .25em var(--glow-color);
- }
- 
- .glow:active {
-  box-shadow: 0 0 0.6em .25em var(--glow-color),
-         0 0 2.5em 2em var(--glow-spread-color),
-         inset 0 0 .5em .25em var(--glow-color);
-         transform: scale(0.95);
- }
+  box-shadow: 0 0 1.5em 0.3em var(--glow-color),
+              0 0 4.5em 2em var(--glow-spread-color),
+              inset 0 0 0.9em 0.3em var(--glow-color);
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+.glow:active {
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+              0 0 3em 1.5em var(--glow-spread-color),
+              inset 0 0 0.6em 0.25em var(--glow-color);
+  transform: scale(0.95);
+}
+
 
  /* ------------------------------------------------------------------------------------------------- */
  
 .send {
   font-family: inherit;
-  font-size: 20px;
-  background: royalblue;
+  font-size: 18px;
+  background: linear-gradient(45deg, royalblue, dodgerblue);
   color: white;
-  padding: 0.7em 1em;
-  padding-left: 0.9em;
+  padding: 0.8em 1.2em;
+  padding-left: 1em;
   display: flex;
   align-items: center;
   border: none;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .send span {
   display: block;
-  margin-left: 0.3em;
+  margin-left: 0.4em;
   transition: all 0.3s ease-in-out;
 }
 
@@ -117,16 +120,22 @@
   transition: transform 0.3s ease-in-out;
 }
 
+.send:hover {
+  background: linear-gradient(45deg, dodgerblue, royalblue);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
 .send:hover .svg-wrapper {
   animation: fly-1 0.6s ease-in-out infinite alternate;
 }
 
 .send:hover svg {
-  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  transform: translateX(1.5em) rotate(45deg) scale(1.2);
 }
 
 .send:hover span {
-  transform: translateX(5em);
+  transform: translateX(6em);
 }
 
 .send:active {
@@ -135,10 +144,14 @@
 
 @keyframes fly-1 {
   from {
-    transform: translateY(0.1em);
+    transform: translateY(0.15em);
   }
 
   to {
-    transform: translateY(-0.1em);
+    transform: translateY(-0.15em);
   }
 }
+
+ /* ------------------------------------------------------------------------------------------------- */
+
+ 
