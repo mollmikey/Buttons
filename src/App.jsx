@@ -4,6 +4,7 @@ import Glow from './buttons/Glow';
 import Send from './buttons/Send'
 import Stars from './buttons/Stars';
 import Neo from './buttons/Neo';
+import Underline from './buttons/Underline';
 
 function App() {
 const [isDarkMode, setIsDarkMode] = useState(false); // State to track the mode
@@ -21,6 +22,7 @@ const [isDarkMode, setIsDarkMode] = useState(false); // State to track the mode
                 <Send />
                 <Stars />
                 <Neo />
+                <Underline />
             </div>
     </>
   );
