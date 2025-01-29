@@ -1,0 +1,13 @@
+<svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke-width="2.5" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+>
+  <!-- Darker Blue Outer Circle with more spacing from the red line -->
+  <circle cx="12" cy="12" r="9" stroke="#003366"/>
+  <!-- Adjusted Red Power Line (Shorter for more spacing) -->
+  <line x1="12" y1="7" x2="12" y2="3" stroke="red"/>
+</svg>
