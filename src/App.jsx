@@ -6,6 +6,7 @@ import Stars from './buttons/Stars';
 import Neo from './buttons/Neo';
 import Underline from './buttons/Underline';
 import SwipeFill from './buttons/SwipeFill';
+import LED from './buttons/LED';
 
 function App() {
 const [isDarkMode, setIsDarkMode] = useState(false); // State to track the mode
@@ -25,6 +26,7 @@ const [isDarkMode, setIsDarkMode] = useState(false); // State to track the mode
                 <Neo />
                 <Underline />
                 <SwipeFill />
+                <LED />
             </div>
     </>
   );
