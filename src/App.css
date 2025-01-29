@@ -494,4 +494,7 @@ button {
   transition-property: width, left;
 }
 
+.underline:active {
+  transform: scale(0.95); /* Slightly shrink the button to mimic a press */
+}
 /* ------------------------------------------------------------------------------------------------- */
