@@ -597,3 +597,133 @@ button {
   text-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff; /* Reduced glow */
   box-shadow: 0 0 3px #0056b3, 0 0 10px #0056b3, 0 0 20px #0056b3; /* Weaker glow */
 }
+
+/* ------------------------------------------------------------------------------------------------- */
+
+.bnw {
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+ }
+ 
+ .bnw::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: black;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+ }
+ 
+ .bnw .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+ }
+ 
+ .bnw .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+ }
+ 
+ .bnw .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+ }
+ 
+ .bnw .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+ }
+ 
+ .bnw:hover {
+  color: white;
+  background: black;
+ }
+ 
+ .bnw:hover::before {
+  width: 0.9375rem;
+  background: white;
+ }
+ 
+ .bnw:hover .text {
+  color: white;
+  padding-left: 1.5em;
+ }
+ 
+ .bnw:hover .top-key {
+  left: -2px;
+  width: 0px;
+ }
+ 
+ .bnw:hover .bottom-key-1,
+  .bnw:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+ }
+
+ .bnw:active {
+  transform: scale(0.95); /* Slightly shrink the button */
+  background: #222; /* Darker black for a "pressed" effect */
+  color: #ddd; /* Slightly dim the text */
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.5); /* Add slight inset shadow */
+}
+
+/* Reduce animations on press for realism */
+.bnw:active::before {
+  width: 0.5rem; /* Make the line shorter */
+  background: #444; /* Dim the accent color */
+}
+
+.bnw:active .text {
+  color: #bbb; /* Make text slightly less bright */
+  padding-left: 1.3em; /* Slightly pull text back */
+}
+
+.bnw:active .top-key,
+.bnw:active .bottom-key-1,
+.bnw:active .bottom-key-2 {
+  background: #666; /* Darker accents on press */
+}
