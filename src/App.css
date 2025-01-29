@@ -727,3 +727,80 @@ button {
 .bnw:active .bottom-key-2 {
   background: #666; /* Darker accents on press */
 }
+
+/* ------------------------------------------------------------------------------------------------- */
+
+.shwing {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(255, 165, 0); 
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.shwing:hover {
+  background: rgb(255, 165, 0); 
+  box-shadow: 0 0 30px 5px rgba(255, 200, 0, 0.815); /* Bright yellow glow */
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.shwing:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.shwing::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #ffe066; /* Light yellow streak effect */
+  box-shadow: 0 0 50px 30px #ffe066; /* Subtle yellow glow */
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.shwing:active {
+  box-shadow: 0 0 0 0 transparent;
+  background: rgb(204, 132, 0); /* Darker orange for press effect */
+  color: #ffedd3; /* Slightly dim text color for press effect */
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}

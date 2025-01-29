@@ -8,6 +8,7 @@ import Underline from './buttons/Underline';
 import SwipeFill from './buttons/SwipeFill';
 import LED from './buttons/LED';
 import BnW from './buttons/BnW';
+import Shwing from './buttons/Shwing';
 
 function App() {
 const [isDarkMode, setIsDarkMode] = useState(false); // State to track the mode
@@ -29,6 +30,7 @@ const [isDarkMode, setIsDarkMode] = useState(false); // State to track the mode
                 <SwipeFill />
                 <LED />
                 <BnW />
+                <Shwing />
             </div>
     </>
   );
