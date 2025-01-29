@@ -31,7 +31,7 @@ button {
 }
 
 .dark-mode {
-  background-color: #333333;
+  background-color: #212121;
   color: #e8e8e8;
 }
 
@@ -107,8 +107,7 @@ button {
   transform: scale(0.95);
 }
 
-
- /* ------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------- */
  
  .send {
   font-family: inherit;
@@ -190,7 +189,7 @@ button {
   }
 }
 
- /* ------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------- */
 
 .stars {
   position: relative;
@@ -388,5 +387,67 @@ button {
   filter: drop-shadow(0 0 5px rgba(255, 223, 99, 0.8));
 }
 
- /* ------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------- */
 
+/* Button container */
+.neo {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  position: relative; /* For positioning child elements */
+  display: inline-block; /* Fit content */
+  overflow: hidden; /* Prevent overflow during animation */
+}
+
+/* Button Styling */
+.neo {
+  --text-stroke-color: rgba(255, 255, 255, 0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 1.5em; /* Reduced font size for better proportions */
+  letter-spacing: 2px; /* Adjusted spacing for compactness */
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial", sans-serif;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color); /* Stroke color for original text */
+}
+
+/* Static Text (Original Text) */
+.actual-text {
+  position: absolute; /* Aligns with hover-text */
+  inset: 0; /* Ensures it takes up the full space of .button */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Perfectly centers the text */
+  color: transparent; /* Only show the stroke */
+  -webkit-text-stroke: 1px var(--text-stroke-color); /* White stroke */
+  z-index: 1; /* Below the hover text */
+}
+
+/* Hover Text (Highlight Effect) */
+.hover-text {
+  position: absolute; /* Aligns with actual-text */
+  inset: 0; /* Matches the button size */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Perfectly centers the hover text */
+  color: var(--animation-color); /* Green hover color */
+  clip-path: inset(0 100% 0 0); /* Initially hidden */
+  -webkit-text-stroke: 1px var(--animation-color); /* Stroke for hover text */
+  transition: clip-path 0.5s ease; /* Smooth transition for cursor swipe */
+  z-index: 2; /* Above the static text */
+}
+
+/* Hover Effect */
+.neo:hover .hover-text {
+  clip-path: inset(0 0 0 0); /* Expand from left to right */
+  filter: drop-shadow(0 0 15px var(--animation-color)); /* Glow effect */
+}
+
+.neo:active {
+  transform: scale(0.95); /* Slightly shrink the button to mimic a press */
+}
